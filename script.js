@@ -1,40 +1,20 @@
-const canvas = document.getElementById("game");
-const ctx = canvas.getContext("2d");
+document.getElementById("editor").onclick = () => {
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    window.location.href = "editor.html";
 
-const TILE = 64;
+};
 
-const WIDTH = 30;
-const HEIGHT = 20;
+document.getElementById("play").onclick = () => {
 
-let selected = 1;
+    alert("Play später");
 
-let map = [];
+};
 
-// MAP ERSTELLEN
+document.getElementById("discord").onclick = () => {
 
-for(let y = 0; y < HEIGHT; y++){
+    window.open("https://discord.com");
 
-    map[y] = [];
-
-    for(let x = 0; x < WIDTH; x++){
-
-        map[y][x] = 0;
-
-    }
-
-}
-
-// TILE BUTTONS
-
-document.getElementById("stone").onclick = ()=>{
-
-    selected = 1;
-
-    selectTile("stone");
-
+};
 };
 
 document.getElementById("grass").onclick = ()=>{
