@@ -6,7 +6,7 @@ const discordBtn = document.getElementById("discord");
 
 editorBtn.addEventListener("click",()=>{
 
-    window.open("https://s82dev.github.io/Dungeon-Crawler/editor.html");
+    window.location.href("https://s82dev.github.io/Dungeon-Crawler/editor.html");
 
 
 });
