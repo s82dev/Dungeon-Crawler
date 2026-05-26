@@ -5,36 +5,47 @@
 
 <meta charset="UTF-8">
 
-<title>Dungeon Crawler Editor</title>
+<title>Editor</title>
 
-<style>
+<link rel="stylesheet" href="editor.css">
 
-body{
-    margin:0;
-    overflow:hidden;
-    background:#111;
-    font-family:Arial;
-}
+</head>
 
-canvas{
-    display:block;
-    background:#222;
+<body>
 
-    image-rendering:pixelated;
-}
+<div id="toolbar">
 
-#toolbar{
+<div 
+class="tile selected"
+id="stone"
+style="background:gray;">
+</div>
 
-    position:fixed;
+<div 
+class="tile"
+id="grass"
+style="background:green;">
+</div>
 
-    top:10px;
-    left:10px;
+<div 
+class="tile"
+id="lava"
+style="background:red;">
+</div>
 
-    background:#000c;
+<button id="save">
+SAVE
+</button>
 
-    padding:10px;
+</div>
 
-    border:3px solid red;
+<canvas id="game"></canvas>
+
+<script src="editor.js"></script>
+
+</body>
+
+</html>    border:3px solid red;
 
     border-radius:10px;
 
