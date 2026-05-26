@@ -1,40 +1,30 @@
-const canvas = document.getElementById("game");
-const ctx = canvas.getContext("2d");
+window.onload = () => {
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    document
+    .getElementById("editor")
+    .onclick = () => {
 
-const TILE = 64;
+        window.location.href = "editor.html";
 
-const WIDTH = 30;
-const HEIGHT = 20;
+    };
 
-let selected = 1;
+    document
+    .getElementById("play")
+    .onclick = () => {
 
-let map = [];
+        alert("Play später");
 
-for(let y = 0; y < HEIGHT; y++){
+    };
 
-    map[y] = [];
+    document
+    .getElementById("discord")
+    .onclick = () => {
 
-    for(let x = 0; x < WIDTH; x++){
+        window.open("https://discord.com");
 
-        map[y][x] = 0;
-
-    }
-
-}
-
-document.getElementById("stone").onclick = ()=>{
-
-    selected = 1;
-
-    updateSelection("stone");
+    };
 
 };
-
-document.getElementById("grass").onclick = ()=>{
-
     selected = 2;
 
     updateSelection("grass");
