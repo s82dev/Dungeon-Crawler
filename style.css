@@ -1,17 +1,63 @@
-document.getElementById("editor").onclick = () => {
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+}
 
-    alert("Editor kommt später");
+#menu{
+    position:relative;
+    width:100vw;
+    height:100vh;
+}
 
-};
+#background{
+    position:absolute;
+    top:0;
+    left:0;
 
-document.getElementById("play").onclick = () => {
+    width:100%;
+    height:100%;
 
-    alert("Spiel startet");
+    object-fit:cover;
 
-};
+    pointer-events:none;
+}
 
-document.getElementById("discord").onclick = () => {
+button{
+    position:absolute;
 
-    window.open("https://discord.com");
+    left:50%;
+    transform:translateX(-50%);
 
-};
+    width:300px;
+    height:70px;
+
+    background:#111;
+    border:4px solid red;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:10;
+}
+
+#editor{
+    top:45%;
+}
+
+#play{
+    top:58%;
+}
+
+#discord{
+    top:71%;
+}
+
+button:hover{
+
+    background:#300;
+
+}
