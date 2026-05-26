@@ -1,24 +1,113 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>Dungeon Crawler</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+}
+
+#menu{
+    position:relative;
+    width:100vw;
+    height:100vh;
+}
+
+#background{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+button{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:300px;
+    height:70px;
+
+    background:#111;
+
+    border:4px solid red;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:999;
+}
+
+#editor{
+    top:45%;
+}
+
+#play{
+    top:58%;
+}
+
+#discord{
+    top:71%;
+}
+
+</style>
+
 </head>
+
 <body>
 
 <div id="menu">
 
-    <img src="assets/menu.png" id="background">
+<img src="assets/menu.png" id="background">
 
-    <button id="editor">EDITOR</button>
-    <button id="play">PLAY</button>
-    <button id="discord">DISCORD</button>
+<button id="editor">EDITOR</button>
+
+<button id="play">PLAY</button>
+
+<button id="discord">DISCORD</button>
 
 </div>
 
-<script src="script.js"></script>
+<script>
+
+document.getElementById("editor").onclick = () => {
+
+    alert("Editor kommt später");
+
+};
+
+document.getElementById("play").onclick = () => {
+
+    alert("Spiel startet");
+
+};
+
+document.getElementById("discord").onclick = () => {
+
+    window.open("https://discord.com");
+
+};
+
+</script>
 
 </body>
+
 </html>
