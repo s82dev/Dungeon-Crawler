@@ -90,4 +90,60 @@ requestAnimationFrame(draw);
 
 }
 
+draw();if(e.key=="2") selected=2;
+if(e.key=="3") selected=3;
+
+});
+
+function draw(){
+
+ctx.fillStyle="#111";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+for(let y=0;y<10;y++){
+
+for(let x=0;x<15;x++){
+
+ctx.strokeStyle="#333";
+
+ctx.strokeRect(
+x*TILE,
+y*TILE,
+TILE,
+TILE
+);
+
+if(map[y][x]==1){
+
+ctx.fillStyle="gray";
+
+}
+
+if(map[y][x]==2){
+
+ctx.fillStyle="green";
+
+}
+
+if(map[y][x]==3){
+
+ctx.fillStyle="red";
+
+}
+
+ctx.fillRect(
+x*TILE,
+y*TILE,
+TILE,
+TILE
+);
+
+}
+
+}
+
+requestAnimationFrame(draw);
+
+}
+
 draw();
