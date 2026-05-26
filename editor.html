@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Dungeon Crawler Editor</title>
+
+<style>
+
+body{
+    margin:0;
+    overflow:hidden;
+    background:#111;
+    font-family:Arial;
+}
+
+canvas{
+    display:block;
+    background:#222;
+
+    image-rendering:pixelated;
+}
+
+#toolbar{
+
+    position:fixed;
+
+    top:10px;
+    left:10px;
+
+    background:#000c;
+
+    padding:10px;
+
+    border:3px solid red;
+
+    border-radius:10px;
+
+    z-index:1000;
+}
+
+.tile{
+
+    width:50px;
+    height:50px;
+
+    margin:5px;
+
+    border:3px solid white;
+
+    cursor:pointer;
+}
+
+.selected{
+
+    border:3px solid yellow;
+}
+
+#save{
+
+    margin-top:10px;
+
+    width:100%;
+    height:50px;
+
+    background:#300;
+
+    color:white;
+
+    border:none;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="toolbar">
+
+<div 
+class="tile selected" 
+id="stone"
+style="background:gray;">
+</div>
+
+<div 
+class="tile"
+id="grass"
+style="background:green;">
+</div>
+
+<div 
+class="tile"
+id="lava"
+style="background:red;">
+</div>
+
+<button id="save">
+SAVE
+</button>
+
+</div>
+
+<canvas id="game"></canvas>
+
+<script>
+
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+const TILE = 64;
+
+const WIDTH = 30;
+const HEIGHT = 20;
+
+let selected = 1;
+
+let map = [];
+
+for(let y=0;y<HEIGHT;y++){
+
+    map[y] = [];
+
+    for(let x=0;x<WIDTH;x++){
