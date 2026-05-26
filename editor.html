@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 
-<title>Editor</title>
+<title>Dungeon Editor V2</title>
 
 <link rel="stylesheet" href="editor.css">
 
@@ -15,27 +15,72 @@
 
 <div id="toolbar">
 
-<div 
-class="tile selected"
-id="stone"
-style="background:gray;">
+<h2>TOOLS</h2>
+
+<div class="tool" data-tool="wall">
+WALL
 </div>
 
-<div 
-class="tile"
-id="grass"
-style="background:green;">
+<div class="tool" data-tool="lava">
+LAVA
 </div>
 
-<div 
-class="tile"
-id="lava"
-style="background:red;">
+<div class="tool" data-tool="chest">
+CHEST
 </div>
 
-<button id="save">
-SAVE
+<div class="tool" data-tool="door">
+DOOR
+</div>
+
+<div class="tool" data-tool="spawner">
+SPAWNER
+</div>
+
+<button id="export">
+EXPORT
 </button>
+
+<button id="import">
+IMPORT
+</button>
+
+<input type="file" id="fileInput">
+
+</div>
+
+<div id="properties">
+
+<h2>PROPERTIES</h2>
+
+<div id="selectedName">
+NONE
+</div>
+
+<label>
+<input type="checkbox" id="solid">
+SOLID
+</label>
+
+<label>
+<input type="checkbox" id="hurt">
+HURT
+</label>
+
+<label>
+<input type="checkbox" id="passthrough">
+PASSTHROUGH
+</label>
+
+<label>
+<input type="checkbox" id="loot">
+CHEST
+</label>
+
+<label>
+<input type="checkbox" id="mob">
+MOB SPAWNER
+</label>
 
 </div>
 
@@ -45,101 +90,4 @@ SAVE
 
 </body>
 
-</html>    border:3px solid red;
-
-    border-radius:10px;
-
-    z-index:1000;
-}
-
-.tile{
-
-    width:50px;
-    height:50px;
-
-    margin:5px;
-
-    border:3px solid white;
-
-    cursor:pointer;
-}
-
-.selected{
-
-    border:3px solid yellow;
-}
-
-#save{
-
-    margin-top:10px;
-
-    width:100%;
-    height:50px;
-
-    background:#300;
-
-    color:white;
-
-    border:none;
-
-    font-size:20px;
-
-    cursor:pointer;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div id="toolbar">
-
-<div 
-class="tile selected" 
-id="stone"
-style="background:gray;">
-</div>
-
-<div 
-class="tile"
-id="grass"
-style="background:green;">
-</div>
-
-<div 
-class="tile"
-id="lava"
-style="background:red;">
-</div>
-
-<button id="save">
-SAVE
-</button>
-
-</div>
-
-<canvas id="game"></canvas>
-
-<script>
-
-const canvas = document.getElementById("game");
-const ctx = canvas.getContext("2d");
-
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-const TILE = 64;
-
-const WIDTH = 30;
-const HEIGHT = 20;
-
-let selected = 1;
-
-let map = [];
-
-for(let y=0;y<HEIGHT;y++){
-
-    map[y] = [];
-
-    for(let x=0;x<WIDTH;x++){
+</html>
